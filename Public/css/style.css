@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    background-image: url(../image/background.jpg);
 
 }
 .container{
@@ -9,15 +10,10 @@ body{
     margin-left: 32.5%;
     margin-top: 30px;
     height: 450px;
-    width: 35%;
-    background: rgb(186, 182, 182);
-    background-image: url(../image/sky.jpg);
-
-    
+    width: 350px;
+    background: rgba(66, 65, 65, 0.463);
+    box-shadow:  1px 1px 10px rgb(184, 181, 181);
 }
-/* .container-start{
-    background-image: url(../image/startbg.png);
-} */
 .start{
     padding: 20px;
     padding-top: 100px;
@@ -25,7 +21,7 @@ body{
     justify-content: center;
 }
 .intro-text{
-    color:#fff;
+    color:rgb(255, 255, 255);
 }
 .logo-img{
     margin-left: 30%;
@@ -38,11 +34,63 @@ body{
     display: flex;
     justify-content: center;
 }
-.btn button{
-    background: rgb(204, 134, 134);
+button{
     height: 23px;
     border: none;
     border-radius: 3px;
-    width: 100px;
     margin: 5px;
+}
+.btn button{
+    background: rgb(243, 196, 39);
+    width: 100px;
+}
+
+/* login container  */
+
+.container-login{
+    display: none;
+}
+.logintop,.signintop{
+    display: grid;
+}
+.backtostart{
+    margin: 10px;
+    width: 60px;
+}
+.login-intro,.signin-intro{
+    margin:auto;
+}
+.input{
+    display: grid;
+    margin: 20px;
+}
+input{
+    width: 80%;
+    padding: 3px;
+    margin-left: 8.7%;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 3px;
+}
+.forgetpw{
+    color:black;
+    font-size: 10px;
+    margin-left: 66%;
+}
+.submit{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 45px;
+    margin-left: 25px;
+}
+.log-submit{
+    width: 70px;
+    background: teal;
+}
+.log-reset{
+    width: 70px;
+    background: orange;
+}
+.container-signup{
+    display: none;
 }
