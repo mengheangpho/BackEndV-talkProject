@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="image/chatlogo.png" type="image/x-icon">
@@ -29,8 +29,8 @@
             </div>
             <form>
                 <div class="input">
-                    <input id="user" type="text" placeholder="Username..." required>
-                    <input id="pass" type="text" placeholder="password..." required>
+                    <input id="userlog" type="text" placeholder="Username..." >
+                    <input id="passlog" type="password" placeholder="password..." >
                     <a class="forgetpw" href="#"><u>Forget password?</u></a>
                 </div>
                 <div class="submit">
@@ -46,30 +46,29 @@
                     <span class="signin-intro">Let's start with sing up.</span>
                 </div>
                 <form class="input">
-                    <input type="text" placeholder="Username..." required>
-                    <input type="email" placeholder="Email address..." required>
-                    <input type="text" placeholder="Password..." required>
-                    <input type="text" placeholder="Confirm password..." required>
-                    <input type="text" placeholder="Your status..." required>
+                    <input id="usersign" type="text" placeholder="Username..." >
+                    <input id="emailsign" type="email" placeholder="Email address..." >
+                    <input id="passsign" type="password" placeholder="Password..." >
+                    <input id="conpasssign" type="password" placeholder="Confirm password..." >
+                    <input id="statusign" type="text" placeholder="Your status..." >
                     <div class="gender">
                         <div>
-                            <input type="radio" id="male" name="gender" value="male" required>
+                            <input type="radio" id="male" name="gender" value="male" >
                             <label for="male">Male</label>
                         </div>
                         <div>
-                            <input type="radio" id="female" name="gender" value="female" required>
+                            <input type="radio" id="female" name="gender" value="female" >
                             <label for="female">Female</label>
                         </div>
                     </div>
                     <div class="submit">
-                        <input class="log-reset" type="reset" value="Cancel">
-                        <input class="log-submit" type="submit" value="Sign in">
+                        <input class="sign-reset" type="reset" value="Cancel">
+                        <input class="sign-submit" type="submit" value="Sign in">
                     </div>
-
                 </form>
             </div>
         </div>
+        <p class="message"></p>
     </div>
 </body>
-<!-- <script src="js/script.js"></script> -->
 </html>
