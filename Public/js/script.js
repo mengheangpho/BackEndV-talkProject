@@ -6,7 +6,7 @@ let startContainer = document.querySelector('.container-start');
 let loginContainer = document.querySelector('.container-login');
 let signinContainer = document.querySelector('.container-signup')
 
-let backbtn = document.querySelector('.backtostart')
+let backbtn = document.querySelectorAll('.backtostart')
 // variable of button 
 const btn_login = document.querySelector('.login-btn');
 const btn_signup = document.querySelector('.singup-btn')
@@ -30,5 +30,6 @@ btn_login.addEventListener('click',login)
 
 
 btn_signup.addEventListener('click',signin)
-
-backbtn.addEventListener('click',backtostart)
+for(back of backbtn){
+    back.addEventListener('click',backtostart);
+};

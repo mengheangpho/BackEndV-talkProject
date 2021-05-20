@@ -46,16 +46,24 @@
                     <span class="signin-intro">Let's start with sing up.</span>
                 </div>
                 <form class="input">
-                    <input type="text" placeholder="Username...">
-                    <input type="email" placeholder="Email address...">
-                    <input type="text" placeholder="Password...">
-                    <input type="text" placeholder="Confirm password">
-                    <input type="text" placeholder="Your staus...">
+                    <input type="text" placeholder="Username..." required>
+                    <input type="email" placeholder="Email address..." required>
+                    <input type="text" placeholder="Password..." required>
+                    <input type="text" placeholder="Confirm password..." required>
+                    <input type="text" placeholder="Your status..." required>
                     <div class="gender">
-                        <input type="radio" id="male" name="gender" value="male">
-                        <label for="male">Male</label>
-                        <input type="radio" id="female" name="gender" value="female">
-                        <label for="female">Female</label>
+                        <div>
+                            <input type="radio" id="male" name="gender" value="male" required>
+                            <label for="male">Male</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="female" name="gender" value="female" required>
+                            <label for="female">Female</label>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <input class="log-reset" type="reset" value="Cancel">
+                        <input class="log-submit" type="submit" value="Sign in">
                     </div>
 
                 </form>
