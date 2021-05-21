@@ -8,6 +8,7 @@
     <title>V-talk</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 </head>
 <body>
     <div class="container"> 
@@ -50,6 +51,7 @@
                     <input id="emailsign" type="email" placeholder="Email address..." >
                     <input id="passsign" type="password" placeholder="Password..." >
                     <input id="conpasssign" type="password" placeholder="Confirm password..." >
+                    <p id="messpass"></p>
                     <input id="statusign" type="text" placeholder="Your status..." >
                     <div class="gender">
                         <div>
@@ -69,6 +71,14 @@
             </div>
         </div>
         <p class="message"></p>
+        <div class="profileContainer">
+            <div class="profiletop">
+                <img id='profilepicture' alt="profilePhoto">
+                <p id="name"></p>
+                <input class="editname" type="text">
+            </div>
+            
+        </div>
     </div>
 </body>
 </html>

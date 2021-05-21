@@ -1,28 +1,30 @@
 body{
+    color: white;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-image: url(../image/background.jpg);
-    /* background-image: url(../image/b.png); */
-    /* background: #000; */
+    /* background-image: url(../image/background.jpg); */
+
+    background: #000;
 
 }
 .container{
     border-radius: 3px;
     margin-left: 32.5%;
-    margin-top: 30px;
-    height: 700px;
+    margin-top: 50px;
+    height: 650px;
     width: 500px;
     background: rgba(15, 15, 15, 0.463);
     box-shadow:  1px 1px 10px rgb(184, 181, 181);
 }
 .start{
     padding: 30px;
-    padding-top: 260px;
+    padding-top: 220px;
     display: grid;
     justify-content: center;
 }
 .intro-text{
+    font-family:Verdana;
     color:rgb(255, 255, 255);
 }
 .logo-img{
@@ -45,7 +47,7 @@ button{
 }
 .btn button{
     color: white;
-    background: orangered;
+    background: #00ff00;
     width: 150px;
 }
 
@@ -63,6 +65,7 @@ button{
     padding-bottom: 40px;
 }
 .backtostart{
+    background:  #AFDCEC;
     margin: 10px;
     width: 80px;
 }
@@ -98,7 +101,13 @@ input{
     margin-right:25px;
     margin-left: 2px;
 }
-
+#messpass{
+    margin-left: 25px;
+    text-decoration: underline;
+    font-size: 14px;
+    color: rgb(255, 5, 5);
+    display: none;
+}
 .log-submit,.sign-submit,.log-reset,.sign-reset{
     font-size: 15px;
     width: 100px;
@@ -124,13 +133,31 @@ label{
     color: white;
 }
 .message{
-text-align: center;
-line-height: 450px;
+    text-align: center;
+    line-height: 450px;
     color: aquamarine;
 }
 
+.profileContainer{
+    display: none;
+    justify-content: center;
+    text-align: center;
+}
+#profilepicture{
+    margin-top: 10px;
+    padding: 2px;
+    background: rgb(245, 244, 244);
+    border-radius: 40px;
+}
 
-/* input[type=redio]{
-    margin: 200px;
-    
-} */
+.editname{
+    display: none;
+    width: 70%;
+    margin-right: 20px;
+    padding: 3px;
+    border-radius: 3px 3px 0px 0px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #000;
+    background: rgba(164, 162, 162, 0.435);
+}
