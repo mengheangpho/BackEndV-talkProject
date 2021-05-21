@@ -9,7 +9,7 @@ const URL = "http://" + IP + ":" + PORT ;
 let message = document.querySelector('.message')
 let loguser = document.querySelector('#userlog');
 let logpass = document.querySelector('#paslog');
-let profilePicture = document.querySelector('#profilepicture')
+let profilePicture = document.querySelector('#picture')
 let profileName = document.querySelector('#name')
 
 // sign variable
@@ -29,6 +29,7 @@ let startContainer = document.querySelector('.container-start');
 let loginContainer = document.querySelector('.container-login');
 let signinContainer = document.querySelector('.container-signup');
 let profileContainer = document.querySelector('.profileContainer')
+let profileButoom = document.querySelector('.profileButtom');
 
 
 // variable of button...
@@ -41,12 +42,6 @@ const signinbtn = document.querySelector('.sign-submit');
 axios.get(URL+"/users").then(response =>{
     users = response.data;
 })
-
-
-
-
-
-
 
 
 
@@ -82,18 +77,13 @@ function bysignin(event){
     user.name = signuser.value;
     user.email = signeemail.value;
     user.status = signstatus.value;
+    user.password = signconfirm.value;
     for(radio of signradio){
         if(radio.checked){
             user.gender = radio.value
         }
     }
-    if(signpass.value !== signconfirm.value ){
-        signconfirm.style.marginBottom ='0px';
-        messpass.style.display='block'
-        messpass.textContent="In valid Password"
-    }
-    else{
-        user.password = signconfirm.value;
+    if((user.name!=="" && user.email !=="" && user.status !=="" && user.password !="" )&&(signpass.value === signconfirm.value)){
         signinContainer.style.display="none";
         message.textContent="Sign In sucessfully ";
         message.style.display="block"
@@ -101,18 +91,44 @@ function bysignin(event){
         setTimeout(function(){ 
         message.textContent="";
         message.display="none";
-        displayuser(user);}
+        displayprofile(user);}
         , 1000);
-    };
+    }
+    else if(signpass.value !== signconfirm.value){
+        signconfirm.style.marginBottom ='0px';
+        messpass.style.display='block'
+        messpass.textContent="In valid Password"
+
+    }
+    else{
+        alert("please fill in your info.")
+
+    }
     // console.log(user)
 }
-function displayuser(user){
+function displayprofile(user){
     // console.log(users)
     profileContainer.style.display="block"
     let gender = user.gender;
     profilePicture.src="image/"+gender+".png";
     profileName.textContent = user.name;
-    console.log(users)
+    for(user of users){
+        displayusers(user)
+    }
+
+}
+function displayusers(user){
+    let div = document.createElement('div');
+    div.className= "oneuser";
+    let img = document.createElement('img');
+    img.id="userpicture";
+    img.src="image/"+user.gender+".png";
+    let span = document.createElement('span');
+    span.id = "username";
+    span.textContent = user.name;
+    div.appendChild(img);
+    div.appendChild(span)
+    profileButoom.appendChild(div)
 
 }
 btn_login.addEventListener('click',login);

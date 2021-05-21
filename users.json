@@ -1,6 +1,6 @@
 [
     {"name": "mengheang", "email": "mengheang@gamil.com", "status": "I love my family", "gender": "male", "password": "123"},
+    {"name": "mengheang", "email": "mengheang@gamil.com", "status": "I love my family", "gender": "female", "password": "123"},
     {"name": "mengheang", "email": "mengheang@gamil.com", "status": "I love my family", "gender": "male", "password": "123"},
-    {"name": "mengheang", "email": "mengheang@gamil.com", "status": "I love my family", "gender": "male", "password": "123"},
-    {"name": "mengheang", "email": "mengheang@gamil.com", "status": "I love my family", "gender": "male", "password": "123"}
+    {"name": "mengheang", "email": "mengheang@gamil.com", "status": "I love my family", "gender": "female", "password": "123"}
 ]
