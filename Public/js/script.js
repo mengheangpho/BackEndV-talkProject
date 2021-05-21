@@ -12,7 +12,7 @@ let logpass = document.querySelector('#paslog');
 let profilePicture = document.querySelector('#picture')
 let profileName = document.querySelector('#name')
 
-// sign variable
+// signin variable
 let signuser = document.querySelector('#usersign');
 let signeemail = document.querySelector('#emailsign');
 let signpass = document.querySelector('#passsign');
@@ -22,6 +22,10 @@ let signstatus = document.querySelector('#statusign');
 let signradio = document.querySelectorAll('input[type="radio"]');
 let user = {};
 let users=[]
+
+// login variable
+let loguser = document.querySelector('#userlog');
+let logpassword = document.querySelector('#passlog');
 
 
 // container...
@@ -71,6 +75,8 @@ function backtostart(event){
 }
 function bylogin(event){
     loginContainer.style.display="none";
+
+    
 }
 function bysignin(event){
     event.preventDefault()
