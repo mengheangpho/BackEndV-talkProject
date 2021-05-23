@@ -14,7 +14,7 @@ body{
     margin-top: 50px;
     height: 650px;
     width: 500px;
-    background: rgba(235, 226, 226, 0.463);
+    background: rgba(15, 15, 15, 0.463);
     box-shadow:  1px 1px 10px rgb(184, 181, 181);
 }
 .start{
@@ -101,8 +101,7 @@ input{
     margin-right:25px;
     margin-left: 2px;
 }
-#messpass,
-.loginmessange{
+#messpass{
     margin-left: 25px;
     text-decoration: underline;
     font-size: 14px;
@@ -120,8 +119,6 @@ input{
 .log-reset,.sign-reset{
     background: orange;
 }
-
-
 /* .container-signup{
     display: none;
 } */
@@ -145,9 +142,6 @@ label{
     /* display: none; */
     justify-content: center;
     text-align: center;
-}
-.name{
-    justify-content: center;
 }
 #picture{
     margin-top: 10px;
@@ -175,7 +169,7 @@ label{
     display: flex;
     margin: 10px;
     background: rgb(203, 186, 186);
-    border-radius: 3px 20px 20px 3px ;
+    border-radius: 3px 20px 20px -3px ;
     color:red;
 }
 #userpicture{
@@ -186,14 +180,4 @@ label{
 #username{
     margin-left: 20px;
     margin-top: 30px;
-}
-.name{
-    display: flex;
-}
-
-#editname{
-    margin-top: 17px;
-    margin-left: 5px;
-    width: 15px;
-    height:17px;
 }
