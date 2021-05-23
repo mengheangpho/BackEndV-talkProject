@@ -1,6 +1,3 @@
-// const { default: axios } = require('axios');
-// const { response } = require('express');
-// let fs = require('fs')
 const IP= "192.168.88.14";
 const PORT = 3000;
 const URL = "http://" + IP + ":" + PORT ;
@@ -17,14 +14,14 @@ let messpass = document.querySelector('#messpass')
 let message = document.querySelector('.message')
 let signstatus = document.querySelector('#statusign');
 let signradio = document.querySelectorAll('input[type="radio"]');
-let user={}
-
+let user={};
 // function
 function backtostart(event){
     window.location.href = "../index.html";
 }
 function bysignin(event){
     event.preventDefault()
+    localStorage.setItem('username',signuser.value)
     user.name = signuser.value;
     user.email = signeemail.value;
     user.status = signstatus.value;
@@ -57,6 +54,8 @@ function bysignin(event){
     // fs.writeFileSync('user.json',user)
     console.log(user)
     axios.post(URL+"/user",user)
+    axios.post(URL+"/locolname",username)
+
 }
 
 

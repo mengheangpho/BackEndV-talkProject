@@ -13,25 +13,45 @@ app.listen((process.env.PORT) || PORT,()=>{
 // read file users.json
 
 let users = JSON.parse(fs.readFileSync('users.json'));
+let username = "";
 // send data users to front end 
 
 app.get("/users",(req,res)=>{
     res.send(users)
 })
 
+app.post('/locolname',(req,res)=>{
+    username = req.body;
+    console.log(username+"yes")
+})
+
 app.post('/user',(req,res)=>{
         let user = req.body
         res.send(user);
-        fs.writeFileSync("user.json",JSON.stringify(user));
-        users.push(user)
-        fs.writeFileSync('users.json',JSON.stringify(users))
+        let username = user.name;
+        fs.writeFileSync(username+".json",JSON.stringify(user));
+        console.log(users != [])
+        if (users != []){
+            for(oneuser of users){
+                if (oneuser.name != user.name){
+                    users.push(user)
+                    fs.writeFileSync('users.json',JSON.stringify(users))
+                }
+            }
+        }
+        else{
+            users.push(user)
+            fs.writeFileSync('users.json',JSON.stringify(users))
+        }
+        
 
 
 })
 app.get('/user',(req,res)=>{
-    let userpro = JSON.parse(fs.readFileSync('user.json'));
-    console.log(userpro)
-    res.send(userpro)
+    console.log(username)
+    // let userpro = JSON.parse(fs.readFileSync(username+'.json'));
+    // console.log(userpro)
+    // res.send(userpro)
 })
 
 // login part 

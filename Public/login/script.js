@@ -14,6 +14,8 @@ let logpassword = document.querySelector('#passlog');
 let loginmessange = document.querySelector('.loginmessange')
 let message = document.querySelector('.message')
 
+localStorage.setItem('username',loguser.value)
+
 // function
 function backtostart(event){
     window.location.href = "../index.html";
