@@ -1,7 +1,6 @@
 let fs = require('fs');
 let express = require('express');
 let axios = require('axios');
-// const { json } = require('express');
 let app=express();
 let PORT = 3000;
 app.use(express.urlencoded());
@@ -13,46 +12,51 @@ app.listen((process.env.PORT) || PORT,()=>{
 // read file users.json
 
 let users = JSON.parse(fs.readFileSync('users.json'));
-let username = "";
+let usersempty=(users=="")
+let localname=''
+let username = " "
+// console.log(usersempty+"yes")
 // send data users to front end 
 
 app.get("/users",(req,res)=>{
     res.send(users)
 })
 
-app.post('/locolname',(req,res)=>{
-    username = req.body;
-    console.log(username+"yes")
-})
+app.post('/localname',(req,res)=>{
+    localname = req.body.name;
+    // console.log(localname + "yes")
+    let userpro = JSON.parse(fs.readFileSync(mengheang+'.json'));
+    res.send(userpro)
 
+})
 app.post('/user',(req,res)=>{
         let user = req.body
         res.send(user);
-        let username = user.name;
+         username = user.name;
         fs.writeFileSync(username+".json",JSON.stringify(user));
-        console.log(users != [])
-        if (users != []){
-            for(oneuser of users){
-                if (oneuser.name != user.name){
-                    users.push(user)
-                    fs.writeFileSync('users.json',JSON.stringify(users))
-                }
+        let samename=false;
+        for(oneuser of users){
+            if (oneuser.name == user.name){
+                samename = true
             }
         }
-        else{
+        if(usersempty){
             users.push(user)
             fs.writeFileSync('users.json',JSON.stringify(users))
         }
+        else{
+            if(!samename){
+            users.push(user)
+            fs.writeFileSync('users.json',JSON.stringify(users))
+        }
+    }
         
-
-
 })
-app.get('/user',(req,res)=>{
-    console.log(username)
-    // let userpro = JSON.parse(fs.readFileSync(username+'.json'));
-    // console.log(userpro)
-    // res.send(userpro)
-})
+// app.get('/user',(req,res)=>{
+//     let userpro = JSON.parse(fs.readFileSync(mengheang+'.json'));
+//     res.send(userpro)
+//     // console.log(+'.json')
+// })
 
 // login part 
 

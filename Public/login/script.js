@@ -1,7 +1,7 @@
 // const { default: axios } = require("axios");
 // const { response } = require("express");
 
-const IP= "192.168.88.14";
+const IP= "192.168.88.24";
 const PORT = 3000;
 const URL = "http://" + IP + ":" + PORT ;
 

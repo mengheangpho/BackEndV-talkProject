@@ -1,4 +1,4 @@
-const IP= "192.168.88.14";
+const IP= "192.168.88.24";
 const PORT = 3000;
 const URL = "http://" + IP + ":" + PORT ;
 
@@ -52,10 +52,9 @@ function bysignin(event){
         alert("please fill in your info.")
     }
     // fs.writeFileSync('user.json',user)
-    console.log(user)
+    let username= localStorage.getItem('username')
     axios.post(URL+"/user",user)
-    axios.post(URL+"/locolname",username)
-
+    axios.post(URL+"/localname",username)
 }
 
 

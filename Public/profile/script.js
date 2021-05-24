@@ -1,5 +1,5 @@
 
-const IP= "192.168.88.14";
+const IP= "192.168.88.24";
 const PORT = 3000;
 const URL = "http://" + IP + ":" + PORT ;
 // let fs = require('fs')
@@ -17,7 +17,7 @@ axios.get(URL+"/users").then(response =>{
         displayusers(user)
     }
 })
-axios.get(URL+"/user").then(response =>{
+axios.post(URL+"/localname").then(response =>{
     let user = response.data;
     displayprofile(user)
 })
