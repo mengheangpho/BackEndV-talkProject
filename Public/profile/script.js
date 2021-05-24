@@ -51,9 +51,6 @@ function displayusers(user){
 function logout(event){
     window.location.href = "../index.html";
 }
-
-
-
 function tochat(event){
     let click = event.target.className;
     object = {
@@ -63,7 +60,6 @@ function tochat(event){
         console.log(response.data)
     })
     window.location.href = "../userchat/index.html";
-    
 }
 // addEventListener
 backtologin.addEventListener('click',logout)
