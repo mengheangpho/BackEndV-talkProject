@@ -1,4 +1,6 @@
-const IP= "192.168.88.24";
+
+
+const IP= "192.168.88.21";
 const PORT = 3000;
 const URL = "http://" + IP + ":" + PORT ;
 
@@ -21,7 +23,7 @@ function backtostart(event){
 }
 function bysignin(event){
     event.preventDefault()
-    localStorage.setItem('username',signuser.value)
+    localStorage.setItem('username',JSON.stringify(signuser.value));
     user.name = signuser.value;
     user.email = signeemail.value;
     user.status = signstatus.value;
@@ -40,6 +42,7 @@ function bysignin(event){
         message.textContent="";
         message.display="none";
         window.location.href = "../profile/index.html";
+        axios.post(URL+"/user",user)
     }
         , 1000);
     }
@@ -49,12 +52,10 @@ function bysignin(event){
         messpass.textContent="In valid Password"
     }
     else{
-        alert("please fill in your info.")
+        alert("please fill  in your info.")
     }
     // fs.writeFileSync('user.json',user)
-    let username= localStorage.getItem('username')
-    axios.post(URL+"/user",user)
-    axios.post(URL+"/localname",username)
+    // let username= localStorage.getItem('username')
 }
 
 

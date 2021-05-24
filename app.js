@@ -10,10 +10,8 @@ app.listen((process.env.PORT) || port,()=>{
     console.log("Server is running on port "+port)
 })
 // read file users.json
-
 let users = JSON.parse(fs.readFileSync('users.json'));
 let usersempty=(users=="")
-let localname=''
 let username = " "
 // send data users to front end 
 
@@ -22,9 +20,9 @@ app.get("/users",(req,res)=>{
 })
 
 app.post('/localname',(req,res)=>{
-    localname = req.body.name;
-    // console.log(localname + "yes")
-    let userpro = JSON.parse(fs.readFileSync(mengheang+'.json'));
+    let localname = req.body.name;
+    console.log(localname)
+    let userpro = JSON.parse(fs.readFileSync(localname+'.json'));
     res.send(userpro)
 
 })
@@ -51,12 +49,6 @@ app.post('/user',(req,res)=>{
     }
         
 })
-// app.get('/user',(req,res)=>{
-//     let userpro = JSON.parse(fs.readFileSync(mengheang+'.json'));
-//     res.send(userpro)
-//     // console.log(+'.json')
-// })
-
 // login part 
 
 app.put('/login',(req,res)=>{
@@ -66,8 +58,34 @@ app.put('/login',(req,res)=>{
     for(user of users){
         if(user.name == username && user.password == password){
             isFound = true
-            fs.writeFileSync("user.json",JSON.stringify(user))
+            // fs.writeFileSync("user.json",JSON.stringify(user))
         }
     }
     res.send(isFound)
+})
+// let userdata = {};
+app.post('/userchat',(req,res)=>{
+    res.send('received')
+    let username = req.body.name
+    userdata = JSON.parse(fs.readFileSync(username+".json"))
+    console.log(userdata)
+    app.get('/userdata',(req,res)=>
+    res.send(userdata))
+})
+
+
+// Send and receive data
+
+let userTexted = JSON.parse(fs.readFileSync('datausers.json'));
+app.post('/sendmessage',(req,res)=>{
+  let amessage = req.body;
+  console.log(amessage);
+  userTexted.push(amessage);
+  res.send(userTexted);
+  fs.writeFileSync('datausers.json',JSON.stringify(userTexted));
+})
+
+app.get('/receivemessages',(req,res)=>{
+  let allmessages = JSON.parse(fs.readFileSync('datausers.json'));
+  res.send(allmessages);
 })

@@ -1,7 +1,6 @@
-// const { default: axios } = require("axios");
-// const { response } = require("express");
+// const { json } = require("express");
 
-const IP= "192.168.88.24";
+const IP= "192.168.88.21";
 const PORT = 3000;
 const URL = "http://" + IP + ":" + PORT ;
 
@@ -27,11 +26,11 @@ function bylogin(event){
         "username":loguser.value,
         "password":logpassword.value
     }
+    localStorage.setItem('username',JSON.stringify(loguser.value));
     // axios
     axios.put("/login",user).then(response =>{
         let isValid = response.data
         if(isValid){
-        // window.location.href = "../profile/index.html";
         loginContainer.style.display="none";
         message.textContent = "Log In Sucessfully"
         message.style.display="block"
@@ -42,7 +41,6 @@ function bylogin(event){
             message.display = "none";
             window.location.href = "../profile/index.html";
         },1000);
-
         }
         else{
             logpassword.style.marginBottom = "0px";
@@ -53,9 +51,6 @@ function bylogin(event){
             loginmessange.style.color="red";
         }
     })
-    
-
-    
 }
 
 // addEventListener

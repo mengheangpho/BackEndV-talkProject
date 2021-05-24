@@ -1,4 +1,4 @@
-const IP= "192.168.88.14";
+const IP= "192.168.88.21";
 const PORT = 3000;
 const URL = "http://" + IP + ":" + PORT ;
 
@@ -6,6 +6,7 @@ const URL = "http://" + IP + ":" + PORT ;
 let startContainer = document.querySelector('.container-start');
 const btn_login = document.querySelector('.login-btn');
 const btn_signup = document.querySelector('.singup-btn');
+
 
 
 // function
@@ -21,5 +22,6 @@ function signin(event){
 // addEventListener
 btn_login.addEventListener('click',login);
 btn_signup.addEventListener('click',signin);
+
 
 // axios
