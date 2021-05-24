@@ -5,7 +5,7 @@ let app=express();
 let port = 3000;
 app.use(express.urlencoded());
 app.use(express.json());
-app.use(express.static("Public"));
+app.use(express.static("public"));
 app.listen((process.env.PORT) || port,()=>{
     console.log("Server is running on port "+port)
 })
