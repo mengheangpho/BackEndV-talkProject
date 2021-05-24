@@ -2,12 +2,12 @@ let fs = require('fs');
 let express = require('express');
 let axios = require('axios');
 let app=express();
-let PORT = 3000;
+let port = 3000;
 app.use(express.urlencoded());
 app.use(express.json());
 app.use(express.static("public"));
-app.listen((process.env.PORT) || PORT,()=>{
-    console.log("Server is running on port "+PORT)
+app.listen((process.env.PORT) || port,()=>{
+    console.log("Server is running on port "+port)
 })
 // read file users.json
 
