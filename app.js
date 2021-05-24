@@ -15,7 +15,6 @@ let users = JSON.parse(fs.readFileSync('users.json'));
 let usersempty=(users=="")
 let localname=''
 let username = " "
-// console.log(usersempty+"yes")
 // send data users to front end 
 
 app.get("/users",(req,res)=>{
