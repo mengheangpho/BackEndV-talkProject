@@ -1,0 +1,199 @@
+body{
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    /* background-image: url(../image/background.jpg); */
+
+    background: #000;
+
+}
+.container{
+    border-radius: 3px;
+    margin-left: 32.5%;
+    margin-top: 50px;
+    height: 650px;
+    width: 500px;
+    background: rgba(235, 226, 226, 0.463);
+    box-shadow:  1px 1px 10px rgb(184, 181, 181);
+}
+.start{
+    padding: 30px;
+    padding-top: 220px;
+    display: grid;
+    justify-content: center;
+}
+.intro-text{
+    font-family:Verdana;
+    color:rgb(255, 255, 255);
+}
+.logo-img{
+    margin-left: 35%;
+    width: 100px;
+    height: 80px;
+    
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+}
+button{
+    height: 30px;
+    border: none;
+    font-size: 16px;
+    border-radius: 3px;
+    margin: 5px;
+}
+.btn button{
+    color: white;
+    background: #00ff00;
+    width: 150px;
+}
+
+/* login container  */
+
+/* .container-login{
+    display: none;
+} */
+.logintop,.signintop{
+    display: grid;
+}
+.login-intro,.signin-intro{
+    font-size: 20px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+.backtostart{
+    background:  #AFDCEC;
+    margin: 10px;
+    width: 80px;
+}
+.login-intro,.signin-intro{
+    margin:auto;
+}
+.input{
+    display: grid;
+    margin: 20px;
+}
+input{
+    width: 90%;
+    padding:10px;
+    margin-left: 5%;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+}
+.forgetpw{
+    color:rgb(186, 182, 182);
+    font-size: 15px;
+    margin-left: 69%;
+}
+.logsubmit{
+    display: flex;
+    justify-content: space-between;
+    margin-right:45px;
+    margin-left: 21px;
+}
+.signsubmit{
+    display: flex;
+    justify-content: space-between;
+    margin-right:25px;
+    margin-left: 2px;
+}
+#messpass,
+.loginmessange{
+    margin-left: 25px;
+    text-decoration: underline;
+    font-size: 14px;
+    color: rgb(255, 5, 5);
+    display: none;
+}
+.log-submit,.sign-submit,.log-reset,.sign-reset{
+    font-size: 15px;
+    width: 100px;
+}
+
+.log-submit,.sign-submit{
+    background: teal;
+}
+.log-reset,.sign-reset{
+    background: orange;
+}
+
+
+/* .container-signup{
+    display: none;
+} */
+
+.gender{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    
+}
+label{
+    color: white;
+}
+.message{
+    text-align: center;
+    line-height: 450px;
+    color: aquamarine;
+}
+
+.profileContainer{
+    /* display: none; */
+    justify-content: center;
+    text-align: center;
+}
+.name{
+    justify-content: center;
+}
+#picture{
+    margin-top: 10px;
+    padding: 2px;
+    background: rgb(245, 244, 244);
+    border-radius: 40px;
+}
+
+.editname{
+    display: none;
+    width: 70%;
+    margin-right: 20px;
+    padding: 3px;
+    border-radius: 3px 3px 0px 0px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #000;
+    background: rgba(164, 162, 162, 0.435);
+}
+.profileButtom{
+    display: grid;
+}
+.oneuser{
+    padding:2.5px 10px;
+    display: flex;
+    margin: 10px;
+    background: rgb(203, 186, 186);
+    border-radius: 3px 20px 20px 3px ;
+    color:red;
+}
+#userpicture{
+    padding: 2px;
+    background: rgb(245, 244, 244);
+    border-radius: 40px;
+}
+#username{
+    margin-left: 20px;
+    margin-top: 30px;
+}
+.name{
+    display: flex;
+}
+
+#editname{
+    margin-top: 17px;
+    margin-left: 5px;
+    width: 15px;
+    height:17px;
+}
