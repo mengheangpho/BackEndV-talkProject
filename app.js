@@ -21,7 +21,6 @@ app.get("/users",(req,res)=>{
 
 app.post('/localname',(req,res)=>{
     let localname = req.body.name;
-    console.log(localname)
     let userpro = JSON.parse(fs.readFileSync(localname+'.json'));
     res.send(userpro)
 
@@ -66,9 +65,8 @@ app.put('/login',(req,res)=>{
 // let userdata = {};
 app.post('/userchat',(req,res)=>{
     res.send('received')
-    let username = req.body.name
+    let username = req.body.name;
     userdata = JSON.parse(fs.readFileSync(username+".json"))
-    console.log(userdata)
     app.get('/userdata',(req,res)=>
     res.send(userdata))
 })

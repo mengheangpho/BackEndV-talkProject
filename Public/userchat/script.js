@@ -54,18 +54,24 @@ function displayMessages(){
           span.className = "span";
           let color = "white";
           let float = "left";
-          let mymessage = message.user + " : " + message.text;
+          let borderradius= "0px 10px 10px 10px";
+          // let mymessage = message.user + " : " + message.text;
           if (message.user === JSON.parse(localStorage.getItem('username'))){
             color = "blue";
             float = "right";
-            mymessage =  message.text+ " : " + message.user;
+            borderradius = "10px 0px 10px 10px"
+            // mymessage =  message.text+ " : " + message.user;
+          }else{
+            span.id = message.user;
           }
+          span.style.borderRadius = borderradius;
           span.style.float = float;
           span.style.backgroundColor = color;
-          span.textContent = mymessage;
+          span.textContent = message.text;
           containSpan.appendChild(span);
           newchatArea.appendChild(containSpan);
         }
+        
     })
   }
   
@@ -73,6 +79,7 @@ function displayMessages(){
   displayUserPartner();
   displayMessages();
   setInterval(displayMessages,500);
+
   
   
   

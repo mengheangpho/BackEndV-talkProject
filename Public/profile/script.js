@@ -53,7 +53,7 @@ function logout(event){
 }
 function tochat(event){
     let click = event.target.className;
-    object = {
+    let object = {
         name:click
     }
     axios.post('/userchat',object).then(response =>{

@@ -3,9 +3,9 @@ body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    /* background-image: url(../image/background.jpg); */
+    background-image: url(../image/background.jpg);
 
-    background: #000;
+    /* background: #000; */
 
 }
 .container{
@@ -51,7 +51,6 @@ button{
     width: 150px;
 }
 
-/* login container  */
 .logout{
     background:  #AFDCEC;
     margin: 10px;
@@ -123,11 +122,6 @@ input{
     background: orange;
 }
 
-
-/* .container-signup{
-    display: none;
-} */
-
 .gender{
     display: flex;
     justify-content: space-around;
@@ -144,7 +138,6 @@ label{
 }
 
 .profileContainer{
-    /* display: none; */
     justify-content: center;
     text-align: center;
 }
@@ -201,21 +194,11 @@ label{
 }
 
 
-/* chat area  */
-/* .contain-chat{
-    margin: 50px 0px 0px 500px;
-    width: 300px;
-    height: 400px;
-    background: rgba(117, 116, 116, 0.712);
-} */
-
 .containchat-area{
     width: 100%;
     height: 84%;
     background: rgba(199, 168, 168, 0.699);
-    /* display: flex;
-    flex-wrap: wrap; */
-    
+
 
 }
 #back{
@@ -277,10 +260,9 @@ label{
 
 .span{
     font-family: sans-serif;
-    padding: 3px;
+    padding:4px 20px;
+    margin: 0px 5px;
     box-sizing: border-box;
-    /* background: rgba(70, 72, 211, 0.747); */
-    border-radius: 10px 10px 10px 10px;
     color: #000;
     
 };
