@@ -62,14 +62,15 @@ app.put('/login',(req,res)=>{
     }
     res.send(isFound)
 })
-// let userdata = {};
+let userdata = {};
 app.post('/userchat',(req,res)=>{
     res.send('received')
     let username = req.body.name;
     userdata = JSON.parse(fs.readFileSync(username+".json"))
-    app.get('/userdata',(req,res)=>
-    res.send(userdata))
+    // app.get('/userdata',(req,res)=>
+    // res.send(userdata))
 })
+app.get('/userdata',(req,res)=> res.send(userdata));
 
 
 // Send and receive data
@@ -77,7 +78,6 @@ app.post('/userchat',(req,res)=>{
 let userTexted = JSON.parse(fs.readFileSync('datausers.json'));
 app.post('/sendmessage',(req,res)=>{
   let amessage = req.body;
-  console.log(amessage);
   userTexted.push(amessage);
   res.send(userTexted);
   fs.writeFileSync('datausers.json',JSON.stringify(userTexted));

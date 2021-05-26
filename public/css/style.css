@@ -3,19 +3,22 @@ body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-image: url(../image/background.jpg);
+    background-image: url(../image/bg3.jpg);
 
     /* background: #000; */
 
 }
 .container{
-    border-radius: 3px;
+    background-image: url(../image/bg2.png);
+    border-radius: 15px;
     margin-left: 32.5%;
     margin-top: 50px;
     height: 650px;
     width: 500px;
-    background: rgba(236, 108, 85, 0.463);
+    /* background: #80cbc38c; */
     box-shadow:  1px 1px 10px rgb(184, 181, 181);
+    border-left: 7px solid #B2DFDB;
+    border-right: 7px solid #B2DFDB;
 }
 .start{
     padding: 30px;
@@ -42,12 +45,15 @@ button{
     height: 30px;
     border: none;
     font-size: 16px;
-    border-radius: 3px;
+    border-radius: 5px;
     margin: 5px;
 }
 .btn button{
     color: white;
-    background: #00ff00;
+    background: #4DB6AC;
+    border-bottom:3px solid #B2DFDB;
+    /* border-top:3px solid #B2DFDB; */
+    border-radius: 5px;
     width: 150px;
 }
 
@@ -78,17 +84,26 @@ button{
     margin: 20px;
 }
 input{
+    background: rgba(165, 41, 41, 0.329);
     width: 90%;
     padding:10px;
     margin-left: 5%;
     margin-bottom: 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
+    border-bottom: 1px solid #000;
 }
-.forgetpw{
-    color:rgb(186, 182, 182);
+::placeholder{
     font-size: 15px;
-    margin-left: 69%;
+    color: white;
+}
+#passlog{
+    margin-bottom: 0px;
+}
+.forgetpw{text-decoration: underline;
+    color:rgb(34, 33, 33);
+    font-size: 15px;
+    margin-left: 66%;
 }
 .logsubmit{
     display: flex;
@@ -102,10 +117,13 @@ input{
     margin-right:25px;
     margin-left: 2px;
 }
+.loginmessange{
+    float: right;
+    margin-right: 50px;
+}
 #messpass,
 .loginmessange{
     margin-left: 25px;
-    text-decoration: underline;
     font-size: 14px;
     color: rgb(255, 5, 5);
     display: none;
@@ -186,15 +204,16 @@ label{
     display: flex;
 }
 
-#editname{
-    margin-top: 17px;
-    margin-left: 5px;
+.edittext{
+    margin-top: 3px;
     width: 15px;
-    height:17px;
+    height:15px;
 }
 
 
-.containchat-area{
+.containchat-area{ 
+    flex: 1;
+    overflow-y: auto;
     width: 100%;
     height: 84%;
     background: rgba(199, 168, 168, 0.699);
@@ -205,8 +224,10 @@ label{
     margin-left: 5px;
 }
 .chat-area{
+    position:sticky;
     width: 100%;
     height: 100%;
+    
 }
 #partnername{
     color:rgb(253, 251, 251);
@@ -255,14 +276,17 @@ label{
     height: 20px;
     padding: 5px 0px 5px 0px ;
     width: 100%;
-    
+    margin-bottom: 5px;
 }
 
 .span{
     font-family: sans-serif;
-    padding:4px 20px;
+    padding:4px 10px;
     margin: 0px 5px;
     box-sizing: border-box;
     color: #000;
     
-};
+}
+#bold,#italic{
+    padding:0px  10px;
+}

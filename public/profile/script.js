@@ -1,8 +1,7 @@
 
-const IP= "192.168.88.21";
+const IP= "192.168.88.30";
 const PORT = 3000;
 const URL = "http://" + IP + ":" + PORT ;
-// let fs = require('fs')
 
 // variable
 let profilePicture = document.querySelector('#picture')
