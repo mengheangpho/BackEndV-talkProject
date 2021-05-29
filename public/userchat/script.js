@@ -1,7 +1,7 @@
 // const IP= "192.168.88.26";
 // const PORT = 3000;
 // const URL = "http://" + IP + ":" + PORT ;
-const URL = "https://v-talk-application.herokuapp.com/"
+const URL = "https://v-talk-application.herokuapp.com"
 
 //============================ ALL AVARIABLE ============================//
 let containChat = document.querySelector('.container');
