@@ -1,22 +1,34 @@
 body{
+    
+background: #fff;
     color: white;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-image: url(../image/bg3.jpg);
+    /* background-image: url(../image/bgg.png); */
 
     /* background: #000; */
 
 }
-.container{
-    background-image: url(../image/bg2.png);
-    border-radius: 15px;
-    margin-left: 32.5%;
+/* .main-container{
+    margin-left: 17%;
+    width: 1000px;
+    display: flex;
     margin-top: 50px;
+} */
+/* .containerimg{
+    width: 50%;
+    background-image: url(../image/bg2.png);
+} */
+.container{
+    /* background-image: url(../image/bggg.png); */
+
+    margin-top: 3%;
+    margin-left: 32.5%;
+    border-radius: 15px;
     height: 650px;
     width: 500px;
-    /* background: #80cbc38c; */
-    box-shadow:  1px 1px 10px rgb(184, 181, 181);
+    background: #80cbc38c;
     border-left: 7px solid #B2DFDB;
     border-right: 7px solid #B2DFDB;
 }
@@ -169,17 +181,6 @@ label{
     border-radius: 40px;
 }
 
-.editname{
-    display: none;
-    width: 70%;
-    margin-right: 20px;
-    padding: 3px;
-    border-radius: 3px 3px 0px 0px;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #000;
-    background: rgba(164, 162, 162, 0.435);
-}
 .profileButtom{
     display: grid;
 }
@@ -204,13 +205,37 @@ label{
     display: flex;
 }
 
-.edittext{
-    margin-top: 3px;
+.edittext,
+.quote,
+.remove{
+    /* background-image: url(../image/quote.png); */
+    /* margin-top: 3px; */
+    margin: 3px;
     width: 15px;
     height:15px;
+    cursor: pointer;
 }
 
-
+ .option{
+    /* margin-top: 0px; */
+    padding-top: 0px;
+    width: 15px;
+    height:15px;
+    cursor: pointer;
+ }
+ .listoption{
+     /* width: 20px;
+     height: 50px; */
+     background: rgba(145, 144, 144, 0.726);
+     border-radius: 5px;
+     /* margin-top:px; */
+     /* padding:3px 15px; */
+     /* margin: 5px; */
+     padding: 5px;
+     z-index: 1;
+     position:absolute;
+     display: none;
+ }
 .containchat-area{ 
     flex: 1;
     overflow-y: auto;
@@ -233,15 +258,16 @@ label{
     color:rgb(253, 251, 251);
     font-weight: bold;
 }
-#quaot{
+#status{
     color: rgb(59, 184, 22);
     font-size: 12px;
 }
 .message-area{
+    display: grid;
     width: 100%;
-    height: 10%;
+    height:10%;
     background: rgba(182, 231, 186, 0.856);
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-self: center;
     box-sizing: border-box;
@@ -255,14 +281,6 @@ label{
     display: grid;
     text-align: center;
 }
-#text-area{
-    margin-top: 20px;
-    width: 90%;
-    outline: none;
-    border: none;
-    background: rgba(97, 97, 97, 0.363);
-    border-radius: 20px;
-}
 
 #send-btn{
     border-radius: 10px;
@@ -271,12 +289,24 @@ label{
     padding: 10px 0px 10px 0px ;
     width: 8%;
     box-sizing: border-box;
+    display: block;
+}
+#edit-btn{
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 10px 0px 10px 0px ;
+    width: 8%;
+    box-sizing: border-box;
+    display: none;
 }
 .containSpan{
+    /* display:flex; */
     height: 20px;
     padding: 5px 0px 5px 0px ;
     width: 100%;
     margin-bottom: 5px;
+    /* background: #000; */
 }
 
 .span{
@@ -289,4 +319,71 @@ label{
 }
 #bold,#italic{
     padding:0px  10px;
+    margin-top: 14.5px;
+}
+.listoption{
+    display: none;
+    
+}
+.quaotarea{
+    display: none;
+    background: rgb(226, 218, 218);
+    width: 500px;
+    height: 40px;
+    /* margin-top: 42%; */
+    border-bottom: 1px solid #000;
+}
+.sendarea{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    background: rgb(187, 106, 106);
+}
+#text-area{
+    margin-top: 16px;
+    height: 30px;
+    width: 90%;
+    outline: none;
+    border: none;
+    background: rgba(97, 97, 97, 0.363);
+    border-radius: 20px;
+}
+#textforquaot{
+    padding:2px 10px;
+    padding-left: 2px;
+    margin: 0;
+    font-size: 13px;
+    /* border-right: 1px solid black; */
+}
+.qoutepart{
+    /* position: absolute; */
+    margin-top: 1.5px;
+    border-radius: 3px;
+    display: grid;
+    background: rgba(218, 46, 46, 0.438);
+}
+.quotetop{
+    display: flex;
+    padding: 0px 5px;
+    border-radius: 3px 3px 0px 0px;
+    border-bottom: 1px solid black;
+    background: rgb(218, 203, 203);
+}
+.quote-img{
+    width: 8px;
+    height: 8px;
+}
+.quotename{
+    color: black;
+    margin: 1.5px;
+    /* margin-left: 5px; */
+    font-size: 7px;
+}
+#quotetext{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 10px;
+    margin: 0px 5px;
+    padding-right: 3px;
 }

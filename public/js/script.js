@@ -1,27 +1,33 @@
-const IP= "192.168.88.30";
+const IP= "192.168.88.26";
 const PORT = 3000;
-const URL = "http://" + IP + ":" + PORT ;
+// const URL = "http://" + IP + ":" + PORT ;
+const URL = "https://v-talk-application.herokuapp.com/"
 
-// variable
+//============== ALL A VARIABLE =============//
+
 let startContainer = document.querySelector('.container-start');
 const btn_login = document.querySelector('.login-btn');
 const btn_signup = document.querySelector('.singup-btn');
 
 
 
-// function
+//=================== ALL FUNTION ====================//
+
+//=========== FUNTION GO TO LOGIN PAGE ===========//
+
 function login(event){
     window.location.href = "login/index.html";
 }
+
+//======== FUNTION GO TO LOGIN PAGE =========//
+
 function signin(event){
     window.location.href = "signin/index.html";
 
 }
 
 
-// addEventListener
+//================= ADD EVENTLISTENER ===============//
 btn_login.addEventListener('click',login);
 btn_signup.addEventListener('click',signin);
 
-
-// axios

@@ -1,8 +1,10 @@
-const IP= "192.168.88.30";
+const IP= "192.168.88.26";
 const PORT = 3000;
-const URL = "http://" + IP + ":" + PORT ;
+// const URL = "http://" + IP + ":" + PORT ;
+const URL = "https://v-talk-application.herokuapp.com/"
 
-// variable
+//============================ ALL AVARIABLE ============================//
+
 const backbtn = document.querySelector('.backtostart')
 const signinbtn = document.querySelector('.sign-submit');
 let signinContainer = document.querySelector('.container-signup');
@@ -15,13 +17,26 @@ let message = document.querySelector('.message')
 let signstatus = document.querySelector('#statusign');
 let signradio = document.querySelectorAll('input[type="radio"]');
 let user={};
-// function
+
+//======================= ALL FUNTION ========================//
+
+//======== funtion back to first page starter page =========//
+
 function backtostart(event){
     window.location.href = "../index.html";
 }
+
+//========== funtion to allow sign in ==============//
+
 function bysignin(event){
+
     event.preventDefault()
+//======== set current user name into localstorage =======//
+
     localStorage.setItem('username',JSON.stringify(signuser.value));
+
+//======= get value from user's input =============//
+
     user.name = signuser.value;
     user.email = signeemail.value;
     user.status = signstatus.value;
@@ -31,10 +46,13 @@ function bysignin(event){
             user.gender = radio.value
         }
     }
+//========== check if all information are inputed ============//
+
     if((user.name!=="" && user.email !=="" && user.status !=="" && user.password !="" )&&(signpass.value === signconfirm.value)){
+
         signinContainer.style.display="none";
         message.textContent="Sign In Sucessfully ";
-        message.style.display="block"
+        message.style.display="block";
         // settimeout ....
         setTimeout(function(){ 
         message.textContent="";
@@ -56,10 +74,7 @@ function bysignin(event){
     // let username= localStorage.getItem('username')
 }
 
+//===================== ADD EVENTLISTENER ==================//
 
-// addEventListener
 backbtn.addEventListener('click',backtostart);
 signinbtn.addEventListener('click',bysignin)
-
-
-// axios

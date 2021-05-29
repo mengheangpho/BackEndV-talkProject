@@ -1,46 +1,51 @@
 
-const IP= "192.168.88.30";
+const IP= "192.168.88.26";
 const PORT = 3000;
-const URL = "http://" + IP + ":" + PORT ;
+// const URL = "http://" + IP + ":" + PORT ;
+const URL = "https://v-talk-application.herokuapp.com/"
 
-// variable
+//================== ALL A VARIABLE ======================//
+
 let loginContainer = document.querySelector('.container-login');
-const backbtn = document.querySelector('.backtostart')
+const backbtn = document.querySelector('.backtostart');
 const loginbtn = document.querySelector('.log-submit');
 let loguser = document.querySelector('#userlog');
 let logpassword = document.querySelector('#passlog');
-let loginmessange = document.querySelector('.loginmessange')
-let message = document.querySelector('.message')
+let loginmessange = document.querySelector('.loginmessange');
+let message = document.querySelector('.message');
 
-localStorage.setItem('username',loguser.value)
+//================= FUNTION TO BACK TO START PAGE =================//
 
-// function
 function backtostart(event){
     window.location.href = "../index.html";
 }
 
+//======================= FUNTION USE TO LOGIN ACCOUNT ======================//
+
 function bylogin(event){
-    event.preventDefault()
+
+    event.preventDefault();
     let user={
         "username":loguser.value,
         "password":logpassword.value
-    }
-    localStorage.setItem('username',JSON.stringify(loguser.value));
-    // axios
+    };
+    //====== CHECK USER IS VALID OR NOT ==========//
+
     axios.put("/login",user).then(response =>{
-        let isValid = response.data
+        let isValid = response.data;
         if(isValid){
-        loginContainer.style.display="none";
-        message.textContent = "Log In Sucessfully"
-        message.style.display="block"
-        // setTimeout 
-        setTimeout(function(){
-            event.preventDefault()
-            message.textContent = "";
-            message.display = "none";
-            window.location.href = "../profile/index.html";
-        },1000);
-        }
+            localStorage.setItem('username',JSON.stringify(user.username)); //===== SET CURRENT INTO LOCALSTORAGE ====//
+            loginContainer.style.display="none";
+            message.textContent = "Log In Sucessfully";
+            message.style.display="block";
+            // setTimeout 
+            setTimeout(function(){
+                event.preventDefault()
+                message.textContent = "";
+                message.display = "none";
+                window.location.href = "../profile/index.html";
+            },1000);
+        } //========== MESSAGE WHEN HAVE SOMETHING WRONG WITH LOGIN ==========//
         else{
             logpassword.style.marginBottom = "0px";
             loginmessange.style.marginBottom = "22px"
@@ -52,7 +57,8 @@ function bylogin(event){
     })
 }
 
-// addEventListener
-loginbtn.addEventListener('click',bylogin)
+//===================== ADD EVENTLISTENER =================//
+
+loginbtn.addEventListener('click',bylogin);
 backbtn.addEventListener('click',backtostart);
 
