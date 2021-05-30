@@ -431,5 +431,5 @@ messagearea.addEventListener('keydown',entersend);
 //====================================== LOAD DATA AND ===============================//
 
 displayUserPartner();
-loadData();
-// setInterval(loadData,3000);
+// loadData();
+setInterval(loadData,3000);
