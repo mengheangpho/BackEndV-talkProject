@@ -216,7 +216,7 @@ function playsound(){
     if(text.text!= undefined){
        arraytext  = text.text.split(" ");
     }
-    else
+    else{
        arraytext  = text.split(" ");
     }
     let message ="";
