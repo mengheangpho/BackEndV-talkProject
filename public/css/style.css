@@ -1,36 +1,46 @@
 body{
-    
-background: #fff;
+    background: rgb(238, 217, 217);
     color: white;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    /* background-image: url(../image/bgg.png); */
-
-    /* background: #000; */
 
 }
-/* .main-container{
+/* ____________container-area____________  */
+.main-container{
+    border-radius: 15px;
     margin-left: 17%;
     width: 1000px;
     display: flex;
     margin-top: 50px;
-} */
-/* .containerimg{
+} 
+.containerimg-userchat,.containerimg-profile,.containerimg-start,.containerimg-login,.containerimg-signup{
     width: 50%;
-    background-image: url(../image/bg2.png);
-} */
+    border-radius: 15px 0px 0px 15px;
+    border-left: 7px solid #a8d7ec;
+}
+.containerimg-signup{
+   background-image: url(../image/signup.jpg);
+}
+.containerimg-login{
+   background-image: url(../image/login.jpg);
+}
+.containerimg-start{
+   background-image: url(../image/welcome.png);
+}
+.containerimg-profile{
+   background-image: url(../image/profile.jpg);
+}
+.containerimg-userchat{
+   background-image: url(../image/userchat.jpg);
+}
 .container{
-    /* background-image: url(../image/bggg.png); */
-
-    margin-top: 3%;
-    margin-left: 32.5%;
-    border-radius: 15px;
+    border-radius: 0px 15px 15px 0px;
     height: 650px;
-    width: 500px;
-    background: #80cbc38c;
-    border-left: 7px solid #B2DFDB;
-    border-right: 7px solid #B2DFDB;
+    width: 50%;
+    background: #ebc7d4;
+    border-left: 2px solid #000;
+    border-right: 7px solid #a8d7ec;
 }
 .start{
     padding: 30px;
@@ -38,16 +48,29 @@ background: #fff;
     display: grid;
     justify-content: center;
 }
-.intro-text{
-    font-family:Verdana;
-    color:rgb(255, 255, 255);
-}
+
 .logo-img{
     margin-left: 35%;
     width: 100px;
     height: 80px;
     
 }
+
+/* __________intro-text-area__________ */
+
+.intro-text{
+    font-family:Verdana;
+    color:rgb(92, 89, 89);
+}
+.login-intro,.signin-intro{
+    color: rgb(92, 89, 89);
+    font-size: 20px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    margin: auto;
+}
+
+/* __________button-area__________ */
 
 .btn{
     display: flex;
@@ -60,16 +83,16 @@ button{
     border-radius: 5px;
     margin: 5px;
 }
-.btn button{
-    color: white;
-    background: #4DB6AC;
-    border-bottom:3px solid #B2DFDB;
-    /* border-top:3px solid #B2DFDB; */
-    border-radius: 5px;
-    width: 150px;
+.backtostart{
+    border: 1px solid black;
+    background:  #AFDCEC;
+    margin: 10px;
+    width: 80px;
 }
 
+/* _________login-and-signup-area_________ */
 .logout{
+    border: 1px solid black;
     background:  #AFDCEC;
     margin: 10px;
     margin-left: 435px;
@@ -78,41 +101,33 @@ button{
 .logintop,.signintop{
     display: grid;
 }
-.login-intro,.signin-intro{
-    font-size: 20px;
-    padding-top: 50px;
-    padding-bottom: 40px;
-}
-.backtostart{
-    background:  #AFDCEC;
-    margin: 10px;
-    width: 80px;
-}
-.login-intro,.signin-intro{
-    margin:auto;
-}
 .input{
     display: grid;
     margin: 20px;
 }
 input{
-    background: rgba(165, 41, 41, 0.329);
+    background: rgba(169, 109, 184, 0.507);
     width: 90%;
     padding:10px;
     margin-left: 5%;
     margin-bottom: 20px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px ;
     border-bottom: 1px solid #000;
+}
+input[type="text"],input[type="password"],input[type="email"]{
+    border-radius: 5px 5px 0px 0px;
+
 }
 ::placeholder{
     font-size: 15px;
-    color: white;
+    color: rgb(75, 73, 73);
 }
 #passlog{
     margin-bottom: 0px;
 }
-.forgetpw{text-decoration: underline;
+.forgetpw{
+    text-decoration: underline;
     color:rgb(34, 33, 33);
     font-size: 15px;
     margin-left: 66%;
@@ -141,17 +156,31 @@ input{
     display: none;
 }
 .log-submit,.sign-submit,.log-reset,.sign-reset{
+    border: 1px solid black;
     font-size: 15px;
     width: 100px;
+    padding:6px 10px;
+}
+.login-btn,.signup-btn{
+    border: 1px solid black;
+    color: rgb(12, 12, 12);
+    font-weight: bold;
+    border-radius: 5px;
+    width: 150px;
+}
+.login-btn{
+    background: rgba(109, 148, 150, 0.616);
+}
+.signup-btn{
+    background: rgba(95, 79, 99, 0.568);
 }
 
 .log-submit,.sign-submit{
-    background: teal;
+    background: rgba(64, 192, 192, 0.692);
 }
 .log-reset,.sign-reset{
-    background: orange;
+    background: rgb(184, 170, 145);
 }
-
 .gender{
     display: flex;
     justify-content: space-around;
@@ -159,26 +188,33 @@ input{
     
 }
 label{
-    color: white;
+    color: rgb(65, 62, 62);
 }
 .message{
     text-align: center;
     line-height: 650px;
-    color: aquamarine;
+    font-weight: bold;
+    color: teal;
 }
 
+
+/* _________profile_area________ */
 .profileContainer{
     justify-content: center;
     text-align: center;
 }
 .name{
     justify-content: center;
+    font-weight: bold;
+    color: rgb(61, 60, 60);
+    text-decoration:2px underline;
 }
 #picture{
     margin-top: 10px;
     padding: 2px;
-    background: rgb(245, 244, 244);
+    background: rgba(164, 88, 236, 0.589);
     border-radius: 40px;
+    border: 1px solid black;
 }
 
 .profileButtom{
@@ -188,65 +224,35 @@ label{
     padding:2.5px 10px;
     display: flex;
     margin: 10px;
-    background: rgb(203, 186, 186);
+    background: #b1e0ff;
     border-radius: 3px 20px 20px 3px ;
-    color:red;
+    color: rgb(61, 60, 60);
+    font-weight: bold;
+    border: 1px solid black;
+    text-decoration:2px underline;
+
 }
+
 #userpicture{
     padding: 2px;
-    background: rgb(245, 244, 244);
+    background: #fff;
     border-radius: 40px;
+    border: 1px solid black;
 }
 #username{
     margin-left: 20px;
     margin-top: 25px;
 }
-.name{
-    display: flex;
-}
+/* _________userchat__________  */
 
-.edittext,
-.quote,
-.remove{
-    /* background-image: url(../image/quote.png); */
-    /* margin-top: 3px; */
-    margin: 3px;
-    width: 15px;
-    height:15px;
-    cursor: pointer;
-}
-
- .option{
-    /* margin-top: 0px; */
-    padding-top: 0px;
-    width: 15px;
-    height:15px;
-    cursor: pointer;
- }
- .listoption{
-     /* width: 20px;
-     height: 50px; */
-     background: rgba(145, 144, 144, 0.726);
-     border-radius: 5px;
-     /* margin-top:px; */
-     /* padding:3px 15px; */
-     /* margin: 5px; */
-     padding: 5px;
-     z-index: 1;
-     position:absolute;
-     display: none;
- }
 .containchat-area{ 
     flex: 1;
     overflow-y: auto;
     width: 100%;
     height: 84%;
-    background: rgba(199, 168, 168, 0.699);
+    background: #EBDDE2;
 
 
-}
-#back{
-    margin-left: 5px;
 }
 .chat-area{
     position:sticky;
@@ -254,59 +260,119 @@ label{
     height: 100%;
     
 }
-#partnername{
-    color:rgb(253, 251, 251);
-    font-weight: bold;
-}
-#status{
-    color: rgb(59, 184, 22);
-    font-size: 12px;
-}
-.message-area{
-    display: grid;
-    width: 100%;
-    height:10%;
-    background: rgba(182, 231, 186, 0.856);
-    /* display: flex; */
-    align-items: center;
-    justify-self: center;
-    box-sizing: border-box;
-}
+
+/* _________user-info_________ */
+
 .userinfo{
+    border: 1px solid black;
+    background: #B7CEEC;
     display: flex;
     height: 6%;
+    border-radius:0px 7px 0px 0px;
 }
+
 .partner{
-    width: 90%;
+    margin-left: 100px;
+    margin-right: 10px;
+    width: 200px;
     display: grid;
     text-align: center;
 }
 
-#send-btn{
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    padding: 10px 0px 10px 0px ;
-    width: 8%;
+#partnername{
+    color:rgb(253, 251, 251);
+    font-weight: bold;
+}
+
+#status{
+    width: auto;
+    font-weight: bolder;
+    color:#a971d1;
+    font-size: 10px;
+}
+
+.usertop{
+    display: flex;
+
+}
+
+#phonecall,#videocall,#setting,#back{
+    width: 25px;
+    height: 25px;
+    padding: 5px ;
+    margin: 1px 2px;
+    border-radius: 50px;
+    border: 1px solid black;
+    background:rgba(213, 125, 235, 0.438);
+}
+
+#back{
+    margin-left: 5px;
+}
+
+/* ________option________  */
+
+.option{
+    padding-top: 0px;
+    width: 15px;
+    height:15px;
+    cursor: pointer;
+ }
+.edittext,
+.quote,
+.remove{
+    margin: 3px;
+    width: 15px;
+    height:15px;
+    cursor: pointer;
+}
+.listoption{
+     background: rgba(145, 144, 144, 0.726);
+     border-radius: 5px;
+     margin-top: 5px;
+     padding: 5px;
+     z-index: 1;
+     position:absolute;
+     display: none;
+ }
+/* _______message-area_______ */
+.message-area{
+    display: grid;
+    width: 100%;
+    height:10%;
+    align-items: center;
+    justify-self: center;
     box-sizing: border-box;
+}
+
+
+#send-btn{
+    border: 1px solid black;
+    padding: 5px ;
+    margin: 10px;
+    margin-top: 15px;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
     display: block;
+    background:rgba(213, 125, 235, 0.438);
 }
 #edit-btn{
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    padding: 10px 0px 10px 0px ;
-    width: 8%;
-    box-sizing: border-box;
+    border: 1px solid black;
+    padding: 5px ;
+    margin: 10px;
+    margin-top: 15px;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
     display: none;
+    background: lightblue;
 }
 .containSpan{
-    /* display:flex; */
     height: 20px;
     padding: 5px 0px 5px 0px ;
     width: 100%;
     margin-bottom: 5px;
-    /* background: #000; */
 }
 
 .span{
@@ -317,57 +383,50 @@ label{
     color: #000;
     
 }
-#bold,#italic{
-    padding:0px  10px;
-    margin-top: 14.5px;
-}
-.listoption{
-    display: none;
-    
-}
-.quaotarea{
-    display: none;
-    background: rgb(226, 218, 218);
-    width: 500px;
-    height: 40px;
-    /* margin-top: 42%; */
-    border-bottom: 1px solid #000;
+#bold,#italic,#voice,#camera{
+    width: 25px;
+    height: 25px;
+    padding: 5px ;
+    margin: 10px 2px;
+    margin-top: 15px;
+    border-radius: 50px;
+    border: 1px solid black;
+    background:rgba(213, 125, 235, 0.438);
 }
 .sendarea{
-    height: 100%;
-    margin: 0;
+    height: 99%;
     display: flex;
-    background: rgb(187, 106, 106);
+    border-radius:0px 0px 12px 0px;
+    background: #B7CEEC;
+    border: 1px solid black;
 }
 #text-area{
-    margin-top: 16px;
+    margin: 17px 0px;
+    margin-left: 10px;
     height: 30px;
-    width: 90%;
+    width: 100%;
     outline: none;
     border: none;
     background: rgba(97, 97, 97, 0.363);
     border-radius: 20px;
 }
-#textforquaot{
-    padding:2px 10px;
-    padding-left: 2px;
-    margin: 0;
-    font-size: 13px;
-    /* border-right: 1px solid black; */
+
+
+/* ______quote-area______ */
+.quotearea{
+    display: none;
+    color: rgb(70, 68, 68);
+    background: rgba(162, 221, 231, 0.486);
+    width: 500px;
+    height: 40px;
 }
-.qoutepart{
-    /* position: absolute; */
-    margin-top: 1.5px;
-    border-radius: 3px;
-    display: grid;
-    background: rgba(218, 46, 46, 0.438);
-}
+
 .quotetop{
     display: flex;
     padding: 0px 5px;
     border-radius: 3px 3px 0px 0px;
     border-bottom: 1px solid black;
-    background: rgb(218, 203, 203);
+    background: white;
 }
 .quote-img{
     width: 8px;
@@ -376,7 +435,6 @@ label{
 .quotename{
     color: black;
     margin: 1.5px;
-    /* margin-left: 5px; */
     font-size: 7px;
 }
 #quotetext{
@@ -386,4 +444,77 @@ label{
     font-size: 10px;
     margin: 0px 5px;
     padding-right: 3px;
+}
+.qoutepart{
+    margin-top: 1.5px;
+    border-radius: 3px;
+    display: grid;
+    background: rgba(175, 39, 209, 0.438);
+}
+#textforquaot{
+    padding:15px 8px;
+    margin: 0;
+    font-size: 13px;
+}
+
+
+
+/* _____________hover-area_______________ */
+#phonecall:hover,
+#videocall:hover,
+#setting:hover,
+#bold:hover,
+#italic:hover,
+#voice:hover,
+#send-btn:hover,
+#camera:hover,
+#back:hover{
+    border: 1px solid white;
+    background: rgba(151, 39, 179, 0.438);
+}
+
+#edit-btn:hover{
+    border: 1px solid white;
+    background: rgb(133, 199, 221);
+}
+
+.logout:hover,
+.backtostart:hover{
+    border: 1px solid white;
+    color: white;
+    background: #77cdec;
+}
+
+#oneuser:hover{
+    border: 1px white solid;
+    background: #93d0f8;
+}
+#picture:hover{
+    border: 1px white solid;
+    background:rgba(211, 95, 240, 0.438);
+}
+#userpicture:hover{
+    border: 1px white solid;
+    background: rgb(224, 223, 223);
+}
+
+.log-submit:hover,.sign-submit:hover{
+    border: 1px solid white;
+    color: white;
+    background: rgba(1, 85, 85, 0.692)   
+}
+.log-reset:hover,.sign-reset:hover{
+    border: 1px solid white;
+    color: white;
+    background: rgb(160, 142, 110);
+}
+.login-btn:hover{
+    color: white;
+    border: 1px solid white;
+    background: rgba(117, 201, 206, 0.616);
+}
+.signup-btn:hover{
+    color: white;
+    border: 1px solid white;
+    background: rgba(163, 117, 175, 0.568);
 }

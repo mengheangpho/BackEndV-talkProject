@@ -1,5 +1,4 @@
-
-// const IP= "192.168.88.26";
+// const IP= "192.168.88.19";
 // const PORT = 3000;
 // const URL = "http://" + IP + ":" + PORT ;
 const URL = "https://v-talk-application.herokuapp.com"
@@ -19,6 +18,7 @@ let users=[]
 
 axios.get(URL+"/users").then(response =>{
     users = response.data;
+    console.log(users)
     for(user of users){
         if(user.name!= username){
             displayusers(user)
@@ -37,7 +37,6 @@ axios.post(URL+"/localname",object).then(response =>{
 //========= FUNTION TO DIPLAYS PLAYER PROFILE ===========//
 
 function displayprofile(user){
-
     profileContainer.style.display="block"
     let gender = user.gender;
     profilePicture.src="../image/"+gender+".png";
@@ -48,7 +47,6 @@ function displayprofile(user){
 //============ FUNTION DISPLAY FRIENDS USERS ============//
 
 function displayusers(user){
-
     let div = document.createElement('div');
     div.id= "oneuser";
     div.className=user.name;
@@ -67,22 +65,14 @@ function displayusers(user){
 //=========== FUNTION FOR LOGOUT ACCOUNT =============//
 
 function logout(event){
-
     window.location.href = "../index.html";
 }
 
 //=============== FUNTION TO GO TO PAGE CHAT =============//
 
 function tochat(event){
-
     let userpartner = event.target.className;
     localStorage.setItem("partner",userpartner)
-    // let object = {
-    //     name:click
-    // }
-    // axios.post('/userchat',object).then(response =>{
-    //     console.log(response.data)
-    // })
     window.location.href = "../userchat/index.html";
 }
 
@@ -90,4 +80,3 @@ function tochat(event){
 
 backtologin.addEventListener('click',logout)
 profileButoom.addEventListener("click",tochat)
-

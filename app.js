@@ -53,8 +53,7 @@ app.post('/user',(req,res)=>{
             users.push(user)
             fs.writeFileSync('users.json',JSON.stringify(users))
         }
-    }
-        
+    }   
 })
 
 //============= Login ( compare informatin that user input with users in users.json if have rend true else flase ) =================//

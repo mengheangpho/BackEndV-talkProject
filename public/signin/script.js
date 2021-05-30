@@ -1,4 +1,4 @@
-// const IP= "192.168.88.26";
+// const IP= "192.168.88.19";
 // const PORT = 3000;
 // const URL = "http://" + IP + ":" + PORT ;
 const URL = "https://v-talk-application.herokuapp.com"
@@ -29,8 +29,8 @@ function backtostart(event){
 //========== funtion to allow sign in ==============//
 
 function bysignin(event){
-
     event.preventDefault()
+
 //======== set current user name into localstorage =======//
 
     localStorage.setItem('username',JSON.stringify(signuser.value));
@@ -49,9 +49,8 @@ function bysignin(event){
 //========== check if all information are inputed ============//
 
     if((user.name!=="" && user.email !=="" && user.status !=="" && user.password !="" )&&(signpass.value === signconfirm.value)){
-
         signinContainer.style.display="none";
-        message.textContent="Sign In Sucessfully ";
+        message.textContent="Sign In Sucessfully !";
         message.style.display="block";
         // settimeout ....
         setTimeout(function(){ 
@@ -65,13 +64,11 @@ function bysignin(event){
     else if(signpass.value !== signconfirm.value){
         signconfirm.style.marginBottom ='0px';
         messpass.style.display='block'
-        messpass.textContent="In valid Password"
+        messpass.textContent="In valid Password !"
     }
     else{
         alert("please fill  in your info.")
     }
-    // fs.writeFileSync('user.json',user)
-    // let username= localStorage.getItem('username')
 }
 
 //===================== ADD EVENTLISTENER ==================//

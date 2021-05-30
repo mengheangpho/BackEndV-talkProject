@@ -1,4 +1,4 @@
-// const IP= "192.168.88.26";
+// const IP= "192.168.88.19";
 // const PORT = 3000;
 // const URL = "http://" + IP + ":" + PORT ;
 const URL = "https://v-talk-application.herokuapp.com"
@@ -7,7 +7,7 @@ const URL = "https://v-talk-application.herokuapp.com"
 
 let startContainer = document.querySelector('.container-start');
 const btn_login = document.querySelector('.login-btn');
-const btn_signup = document.querySelector('.singup-btn');
+const btn_signup = document.querySelector('.signup-btn');
 
 
 
@@ -25,7 +25,6 @@ function signin(event){
     window.location.href = "signin/index.html";
 
 }
-
 
 //================= ADD EVENTLISTENER ===============//
 btn_login.addEventListener('click',login);

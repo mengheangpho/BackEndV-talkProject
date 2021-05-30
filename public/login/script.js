@@ -1,5 +1,4 @@
-
-// const IP= "192.168.88.26";
+// const IP= "192.168.88.19";
 // const PORT = 3000;
 // const URL = "http://" + IP + ":" + PORT ;
 const URL = "https://v-talk-application.herokuapp.com"
@@ -36,7 +35,7 @@ function bylogin(event){
         if(isValid){
             localStorage.setItem('username',JSON.stringify(user.username)); //===== SET CURRENT INTO LOCALSTORAGE ====//
             loginContainer.style.display="none";
-            message.textContent = "Log In Sucessfully";
+            message.textContent = "Log In Sucessfully !";
             message.style.display="block";
             // setTimeout 
             setTimeout(function(){
@@ -51,7 +50,7 @@ function bylogin(event){
             loginmessange.style.marginBottom = "22px"
             loginmessange.style.marginLeft = "43px"
             loginmessange.style.display="block";
-            loginmessange.textContent = "Username or Password is in valid!!";
+            loginmessange.textContent = "Username or Password is in valid !";
             loginmessange.style.color="red";
         }
     })

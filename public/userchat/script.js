@@ -1,26 +1,27 @@
-// const IP= "192.168.88.26";
+// const IP= "192.168.88.19";
 // const PORT = 3000;
 // const URL = "http://" + IP + ":" + PORT ;
-const URL = "https://v-talk-application.herokuapp.com"
+const URL = "https://v-talk-application.herokuapp.com";
 
 //============================ ALL AVARIABLE ============================//
 let containChat = document.querySelector('.container');
 let textChat = document.querySelector("#text-area");
 let sendBtn = document.querySelector("#send-btn");
 let editBtn = document.querySelector("#edit-btn");
-let partnername = document.querySelector('#partnername')
-let status = document.querySelector('#status')
-let backbtn = document.querySelector('#back')
+let partnername = document.querySelector('#partnername');
+let status = document.querySelector('#status');
+let backbtn = document.querySelector('#back');
 let containchatarea = document.querySelector('.containchat-area');
 let messagearea = document.querySelector('.message-area');
-let quaotarea = document.querySelector('.quaotarea')
-let textquaot = document.querySelector('#textforquaot')
+let quaotarea = document.querySelector('.quotearea');
+let textquaot = document.querySelector('#textforquaot');
 let bold = document.querySelector('#bold');
 let italic = document.querySelector('#italic');
+let editquote = false;
 let stylebold = 'normal';
 let styleitalic = 'normal';
-let userquote = ""
-let qouteobject = {}
+let userquote = "";
+let qouteobject = {};
 
 //=============================== ALL FUNTION ================================//
 
@@ -34,7 +35,6 @@ function backtoprofile(event){
 
 function displayUserPartner(){
   let userpartner =localStorage.getItem('partner');
-  console.log(userpartner);
   axios.post('/userdata',{userpartner : userpartner}).then(response =>{
   partnername.textContent= response.data.name;
   status.textContent = response.data.status;
@@ -44,7 +44,7 @@ function displayUserPartner(){
 //======= funtion to send new message to store in datausers.json ==============//
 
 function sendMessage(){
-  displayUserPartner()
+  displayUserPartner();
     let currentUser = JSON.parse(localStorage.getItem('username'));
     let userText = {};
     let text = textChat.value;
@@ -54,11 +54,13 @@ function sendMessage(){
     userText.italic = styleitalic;
     if(qtext!==""){
       userText.text ={user:userquote,quaot:qtext,text:text};
+      textquaot.textContent="";
     }
     else{
       userText.text = text;
     }
     if (textChat.value !== ""){
+      playsound()
       axios.post('/sendmessage',userText).then(response=>{
         mess = response.data;
         displayMessages(response.data);
@@ -69,15 +71,20 @@ function sendMessage(){
     styleitalic = 'normal';
     quaotarea.style.display="none";
     containchatarea.style.height="84%"
-    messagearea.style.height="10%"
+    messagearea.style.height="10%";
 
 }
+
+function playsound(){
+  var aSound = document.createElement('audio');
+  aSound.setAttribute('src', '../sound/mixkit-correct-answer-tone-2870.wav');
+  aSound.play();
+};
 
 //========== funtion to display all messages on the chat area ============//
   
   function displayMessages(messages){
-    // console.log(messages)
-      
+    
 //============== Ask for oldchatarea if exist remove =================//
 
       let oldchatArea = document.querySelector(".chat-area");
@@ -92,9 +99,10 @@ function sendMessage(){
       containchatarea.appendChild(newchatArea);
 
 //=============== Create element div contain span and span =================//
+
       let index = -1;
       for (message of messages){
-          index+=1
+          index+=1;
           let containSpan = document.createElement('div');
           containSpan.className = "containSpan";
           containSpan.id = index;
@@ -106,23 +114,22 @@ function sendMessage(){
           quoteimg.className="quote-img";
           let quotename = document.createElement('p');
           quotename.className="quotename";
-          // quotename.textContent=userquote;
           let quotetop = document.createElement('div');
           quotetop.className="quotetop";
           let textquote = document.createElement("p");
           textquote.id="quotetext";
           quotetop.appendChild(quoteimg);
-          quotetop.appendChild(quotename)
+          quotetop.appendChild(quotename);
           divquote.appendChild(quotetop);
           divquote.appendChild(textquote);
           span.classList.add(message.user,"span");
           let color = "white";
           let float = "left";
           let borderradius= "0px 10px 10px 10px";
-          // listoption--------------
+          // ==========LIST OPTION========== //
 
           if (message.user === JSON.parse(localStorage.getItem('username'))){
-            color = "blue";
+            color = "#82CAFA";
             float = "right";
             borderradius = "10px 0px 10px 10px";
             span.textContent = emoji(message.text);
@@ -169,39 +176,33 @@ function sendMessage(){
             listoption.appendChild(quoteicon);
           }
           span.appendChild(listoption);
-          span.appendChild(option)
-
-          // ======== not yet complete
-          console.log(message.text)
+          span.appendChild(option);
           if(message.text.text!= undefined && message.user==JSON.parse(localStorage.getItem('username'))){
             containSpan.appendChild(span);
             textquote.textContent = message.text.quaot;
             quotename.textContent=message.text.user;
-            containSpan.appendChild(divquote)
+            containSpan.appendChild(divquote);
           }
           else if(message.text.text!= undefined && message.user!=JSON.parse(localStorage.getItem('username'))){
             textquote.textContent = message.text.quaot;
             quotename.textContent=message.text.user;
+            divquote.style.background="#B7CEEC";
+            divquote.style.color="black";
             containSpan.appendChild(span);
-            containSpan.appendChild(divquote)
+            containSpan.appendChild(divquote);
           }
           else{
             containSpan.appendChild(span);
-          }
-          // console.log(message.user)
-          // containSpan.appendChild(span);
-
+          };
           newchatArea.appendChild(containSpan);
-      }
+      };
       let option = document.querySelectorAll('.option');
+      // ==========ADD EVENTLISTENER========== //
       for(opt of option){
-        
         opt.addEventListener('click',showoption)
-        // opt.addEventListener('mouseout',hideoption)
 
-      }
-    // })
-}
+      };
+};
 
 //=========================== funtion to change from feeling sign to emoji =================//
 
@@ -215,11 +216,9 @@ function sendMessage(){
     if(text.text!= undefined){
        arraytext  = text.text.split(" ");
     }
-    else{
+    else
        arraytext  = text.split(" ");
     }
-    
-// let arraytext  = text.split(" ");
     let message ="";
     for (word of arraytext){
       let foundemoji = false;
@@ -242,9 +241,8 @@ let countoption = 0;
 let myoption ="";
 let myindex = -1;
 function findoption(event){
-  countoption +=1
+  countoption +=1;
   myoption  = event.target.className;
-  console.log(myoption);
   let hideoptions = document.querySelectorAll(".listoption");
   for (hideoption of hideoptions){
     if (hideoption.style.display === "block"){
@@ -261,27 +259,22 @@ function findoption(event){
   
 }
 
-
-
+// ==========SHOW OPTION==========// 
 
 function showoption(event) {
   countoption += 1;
-  console.log(countoption)
   let option = "";
   let mess="";
   let eventar = event.target;
   myindex = eventar.parentNode.parentNode.id;
-  console.log("myindex"+myindex);
-  // console.log(myindex);
-  // let onclick = event.target.className;
   if(eventar.className == "option"){
     mess = eventar.parentElement;
     option = mess.querySelector('.listoption');
     if(countoption%2 ==1){
-    option.style.display="block"
+    option.style.display="block";
     }
     else{
-    option.style.display="none"
+    option.style.display="none";
     }
     }
   let alloptions = option.childNodes;
@@ -291,7 +284,7 @@ function showoption(event) {
 
 }
 
-
+// =========EDIT AREA========= // 
 
 function eidtion(params) {
   sendBtn.style.display = "none";
@@ -300,23 +293,28 @@ function eidtion(params) {
     allmessages = response.data;
     if(allmessages[myindex].text.text!==undefined){
       textChat.value = allmessages[myindex].text.text;
-      qouteobject = allmessages[myindex].text
-
+      qouteobject = allmessages[myindex].text;
+      editquote = true;
     }
     else{
       textChat.value = allmessages[myindex].text;
+      editquote = false;
     }
-    console.log()
   })
 }
 
 function editmessage(params) {
-  
   let toedit = {};
-
   toedit.index = myindex;
-  qouteobject.text = textChat.value;
-  toedit.text = qouteobject;
+  if(editquote){
+    qouteobject.text = textChat.value;
+    toedit.text = qouteobject;
+  }
+  else{
+    toedit.text = textChat.value;
+  }
+
+  // if()
   axios.put("/editmessage",toedit).then(response=>{
     displayMessages(response.data);
   })
@@ -325,22 +323,27 @@ function editmessage(params) {
   editBtn.style.display = "none";
 }
 
+// ==========QOUTE AREA==========// 
 
 function quaotation(params) {
-  containchatarea.style.height = "78%"
-  quaotarea.style.display="flex"
+  containchatarea.style.height = "78%";
+  quaotarea.style.display="flex";
   axios.get("/receivemessages").then(response =>{
     allmessages = response.data;
     if(allmessages[myindex].text.text!==undefined){
       textquaot.textContent= allmessages[myindex].text.text;
+      userquote=allmessages[myindex].user;
     }else{
-      textquaot.textContent= allmessages[myindex].text
+      textquaot.textContent= allmessages[myindex].text;
+      userquote=allmessages[myindex].user;
+
     }
-    userquote=allmessages[myindex].user;
 
 
   })
 }
+
+// ==========REMOVE AREA========== // 
 
 function removal(params) {
   if (confirm("Are you sure to delete this message?")){
@@ -352,23 +355,11 @@ function removal(params) {
 }
 
 
-
-//============ funtion to hide the option of edit quote and remove =========//
-
-// function hideoption() {
-//   // console.log('yes')
-//   let alloption = document.querySelectorAll('.listoption')
-//   for(option of alloption){
-//     option.style.display = "none"
-//   }
-// };
-
 //============= funtion to play style to bold or italic ========================//
 let countClickOfbold = 0;
 let countClickOfitalic = 0;
 function setbold() {
   countClickOfbold += 1;
-  console.log('bold')
   stylebold = 'bold';
   textChat.style.fontWeight = stylebold;
   if (countClickOfbold %2 === 0){
@@ -380,7 +371,6 @@ function setbold() {
 
 function setitalic() {
   countClickOfitalic += 1;
-  console.log('italic')
   styleitalic = 'italic';
   textChat.style.fontStyle = styleitalic;
   if (countClickOfitalic %2 === 0){
@@ -420,7 +410,7 @@ function loadData(){
 //===================================== ADD EVENTLISTENER===============================//
 
 sendBtn.addEventListener("click",sendMessage);
-editBtn.addEventListener('click',editmessage)
+editBtn.addEventListener('click',editmessage);
 backbtn.addEventListener('click',backtoprofile);
 bold.addEventListener('click',setbold);
 italic.addEventListener('click',setitalic);
@@ -438,6 +428,4 @@ messagearea.addEventListener('keydown',entersend);
 
 displayUserPartner();
 loadData();
-// displayMessages();
-// setInterval(displayMessages,500);
-// setInterval(loadData,3000);
+setInterval(loadData,3000);
