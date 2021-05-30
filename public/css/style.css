@@ -374,7 +374,14 @@ label{
     width: 100%;
     margin-bottom: 5px;
 }
-
+.spanname{
+    color: teal;
+    position:absolute;
+    margin-top: 24px;
+    font-size: 10px;
+    margin-left: 6px;
+    
+}
 .span{
     font-family: sans-serif;
     padding:4px 10px;

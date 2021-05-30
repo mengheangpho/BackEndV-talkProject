@@ -1,4 +1,4 @@
-// const IP= "192.168.88.19";
+// const IP= "192.168.33.81";
 // const PORT = 3000;
 // const URL = "http://" + IP + ":" + PORT ;
 const URL = "https://v-talk-application.herokuapp.com";
@@ -106,6 +106,9 @@ function playsound(){
           let containSpan = document.createElement('div');
           containSpan.className = "containSpan";
           containSpan.id = index;
+          let spanname = document.createElement('span');
+          spanname.className="spanname";
+          containSpan.appendChild(spanname)
           let span = document.createElement("span");
           let divquote = document.createElement('div');
           divquote.className="qoutepart"
@@ -135,7 +138,8 @@ function playsound(){
             span.textContent = emoji(message.text);
           }else{
             span.id = message.user;
-            span.textContent = emoji(message.text);
+            spanname.textContent=message.user;
+            span.textContent =emoji(message.text);
           };
 
 //===================== create Img edit quot remove and option =========================//
@@ -428,4 +432,4 @@ messagearea.addEventListener('keydown',entersend);
 
 displayUserPartner();
 loadData();
-setInterval(loadData,3000);
+// setInterval(loadData,3000);
