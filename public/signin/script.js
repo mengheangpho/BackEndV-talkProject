@@ -1,4 +1,4 @@
-// const IP= "192.168.88.19";
+// const IP= "192.168.88.10";
 // const PORT = 3000;
 // const URL = "http://" + IP + ":" + PORT ;
 const URL = "https://v-talk-application.herokuapp.com";
@@ -40,7 +40,7 @@ function bysignin(event){
     user.name = signuser.value;
     user.email = signeemail.value;
     user.status = signstatus.value;
-    user.password = signconfirm.value;
+    user.password = signconfirm.value; 
     for(radio of signradio){
         if(radio.checked){
             user.gender = radio.value

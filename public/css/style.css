@@ -295,7 +295,9 @@ label{
     display: flex;
 
 }
-
+.userright{
+    display: flex;
+}
 #phonecall,#videocall,#setting,#back{
     width: 25px;
     height: 25px;
@@ -372,17 +374,19 @@ label{
     height: 20px;
     padding: 5px 0px 5px 0px ;
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 .spanname{
+    font-weight: bold;
     color: teal;
     position:absolute;
-    margin-top: 24px;
+    margin-top: 30px;
     font-size: 10px;
     margin-left: 6px;
     
 }
 .span{
+    border: 0.1px solid black;
     font-family: sans-serif;
     padding:4px 10px;
     margin: 0px 5px;
@@ -453,7 +457,8 @@ label{
     padding-right: 3px;
 }
 .qoutepart{
-    margin-top: 1.5px;
+    border: 0.1px solid black;
+    margin-top: 2px;
     border-radius: 3px;
     display: grid;
     background: rgba(175, 39, 209, 0.438);
@@ -524,4 +529,39 @@ label{
     color: white;
     border: 1px solid white;
     background: rgba(163, 117, 175, 0.568);
+}
+.italic,
+.bold,
+.voice,
+.camera,
+.phonecall,
+.videocall,
+.setting{
+    display: none;
+    border-radius: 1.5px;
+    font-size: 10px;
+    padding:0.5px 9px ;
+    margin-left: 1px;
+    margin-top: 53px;
+    background: rgba(73, 69, 69, 0.61);
+    position:absolute;
+}
+.phonecall,
+.videocall,
+.setting{
+    padding:0.5px 0px;
+    z-index: 99;
+    margin-top: 38.5px;
+    margin-right: 10px;
+}
+.setting{
+    padding: 0.5px 3px ;
+    margin-left: 3px;
+}
+.voice{
+    padding:0.5px 7px ;
+}
+.camera{
+    padding:0.5px 3px ;
+
 }

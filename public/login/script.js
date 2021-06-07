@@ -40,7 +40,7 @@ function bylogin(event){
             // setTimeout 
             setTimeout(function(){
                 event.preventDefault()
-                message.textContent = "";
+                message.textContent = ""; 
                 message.display = "none";
                 window.location.href = "../profile/index.html";
             },1000);

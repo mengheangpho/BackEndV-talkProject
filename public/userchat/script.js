@@ -1,4 +1,4 @@
-// const IP= "192.168.88.19";
+// const IP= "192.168.88.10";
 // const PORT = 3000;
 // const URL = "http://" + IP + ":" + PORT ;
 const URL = "https://v-talk-application.herokuapp.com";
@@ -13,6 +13,7 @@ let status = document.querySelector('#status');
 let backbtn = document.querySelector('#back');
 let containchatarea = document.querySelector('.containchat-area');
 let messagearea = document.querySelector('.message-area');
+let userright = document.querySelector('.userright');
 let quaotarea = document.querySelector('.quotearea');
 let textquaot = document.querySelector('#textforquaot');
 let bold = document.querySelector('#bold');
@@ -83,7 +84,7 @@ function playsound(){
 
 //========== funtion to display all messages on the chat area ============//
   
-  function displayMessages(messages){
+function displayMessages(messages){
     
 //============== Ask for oldchatarea if exist remove =================//
 
@@ -210,12 +211,12 @@ function playsound(){
 
 //=========================== funtion to change from feeling sign to emoji =================//
 
-  let emojiMap = {
+let emojiMap = {
     ";(" : "😌","><":"😆",":p":"😋","<3":"❤️",":o":"😱",":D":"😛",":":"😶",":|":"😐","$$":"🤑",":x":"😘",":(":"☹️",":E":"😁",":#":"🤐",":@":"😵",
     "8)":"🤓","^~^":"😖",";<":"🤧","Q>":"😇",":}":"🤡",":.)":"😭","b-)":"😎",">_<":"😡","8>":"👽",":)":"😊"
   };
   
-  function emoji(text){
+function emoji(text){
     let arraytext="";
     if(text.text!= undefined){
        arraytext  = text.text.split(" ");
@@ -241,6 +242,7 @@ function playsound(){
   };
 
 //========= funtion to show the option of edit quote and remove =========//
+
 let countoption = 0;
 let myoption ="";
 let myindex = -1;
@@ -338,10 +340,7 @@ function quaotation(params) {
     }else{
       textquaot.textContent= allmessages[myindex].text;
       userquote=allmessages[myindex].user;
-
     }
-
-
   })
 }
 
@@ -423,8 +422,47 @@ messagearea.addEventListener('keydown',(event)=>{
   }
   
 });
-messagearea.addEventListener('keydown',entersend);
+const arrayofposition = ["italic","bold","voice","camera","phonecall","videocall","setting"]
+function showposition(event){
+  let etarget = event.target;
+  for(position of arrayofposition){
+    if(etarget.id == position){
+      let show=document.querySelector("."+etarget.id);
+      show.style.display="block"
+    }
+  }
+}
+function showoptionhead(event){
+  let etarget = event.target;
+  for(position of arrayofposition){
+    if(etarget.id == position){
+      let show=document.querySelector("."+etarget.id);
+      show.style.display="block"
+    }
+  }
+}
+function hideposition(){
+  for(position of arrayofposition){
+    let hide = document.querySelector('.'+position);
+    if(hide!= null){
+      hide.style.display="none";
+    }
+  }
+}
+function hidepositionhead(){
+  for(position of arrayofposition){
+    let hide = document.querySelector('.'+position);
+    if(hide != null){
+      hide.style.display="none";
+    }
+  }
+}
 
+messagearea.addEventListener('keydown',entersend);
+messagearea.addEventListener('mouseover',showposition)
+messagearea.addEventListener('mouseout',hideposition)
+userright.addEventListener('mouseover',showoptionhead)
+userright.addEventListener('mouseout',hidepositionhead)
 
 //====================================== LOAD DATA AND ===============================//
 
